@@ -1,0 +1,14 @@
+h1 {color:maroon;}
+
+#second {color: blueviolet;}
+    
+/* Set the background color of the HTML document to beige */
+body {
+    background-color: beige;
+  }
+  
+/* Set the color of the navlink bar to red */
+.nav-link {
+    color: red;
+  }
+  
