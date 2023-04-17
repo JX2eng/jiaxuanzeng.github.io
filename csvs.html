@@ -5,32 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="JZpr.css">
+    <link rel="stylesheet" href="nav.css">
     <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
     <title>Data</title>
 </head>
 <body>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a href="index.html" class="nav-link active">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="data.html" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="csvs.html">CSVs</a>
-                <a class="dropdown-item" href="python.html">Python</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a href="about.html" class="nav-link">About</a>
-        </li>
-    </ul>
+    <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+    <label for="page-nav-toggle">
+      <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+        <g class="icon-group">
+          <g class="icon--menu">
+            <path d="M 6 0 L 54 0" />
+            <path d="M 6 15 L 54 15" />
+            <path d="M 6 30 L 54 30" />
+          </g>
+          <g class="icon--close">
+            <path d="M 15 0 L 45 30" />
+            <path d="M 15 30 L 45 0" />
+          </g>
+        </g>
+      </svg>
+    </label>
+    <nav class="main-navigation">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="data.html" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item disabled" href="csvs.html">CSVs</a>
+                    <a class="dropdown-item" href="python.html">Python</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </li>
+        </ul>
+    </nav>
     <h1>My CSVs data</h1>
     <p>I will share my CSVs data here in the future.</p>
     <div>
         <img class="img-fluid center-img" src="csv.png" style="width: 50%; margin: 0 0 0 20px; float: left;">
     </div>
+    <footer class="bg-dark text-white d-none d-md-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <a>Welcome!</a>
+            </div>
+            <div class="col-md-6">
+              <a>This is Jiaxuan Zeng's website</a>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>

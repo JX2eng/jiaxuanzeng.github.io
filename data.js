@@ -1,22 +1,4 @@
 
-  const timeContainer = document.getElementById("time-container");
-const timeEl = document.getElementById("time");
-const toggleTimeBtn = document.getElementById("toggle-time");
-
-let isTimeVisible = true;
-
-function updateTime() {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  const dateString = now.toDateString();
-  timeEl.textContent = `${dateString} ${timeString}`;
-}
-
-
-updateTime();
-setInterval(updateTime, 1000);
-
-toggleTimeBtn.addEventListener("click", toggleTime);
 
 
 function toggleTime() {
@@ -32,3 +14,16 @@ function toggleTime() {
       button.innerHTML = "Show Time";
     }
   }
+
+function welcome(){
+  var firstName = prompt("Enter you First Name")
+  var lastName = prompt("Enter you last name")
+  alert("Welcome, " + firstName + lastName + "!")
+}
+
+function sortArray() {
+  var input = document.getElementById("input-array").value;
+  var arr = input.split(",");
+  arr.sort(function(a, b){return a - b});
+  document.getElementById("output").innerHTML = "Sorted Array: " + arr;
+}

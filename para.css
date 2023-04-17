@@ -1,0 +1,11 @@
+p::first-letter {
+    color: black;
+    font-family: "Georgia", serif;
+    font-size: 3em;
+    line-height: 0.8;
+    float: left;
+    padding-top: 0.1em;
+    padding-right: 0.1em;
+    padding-left: 0;
+    }
+  

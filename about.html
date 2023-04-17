@@ -5,34 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="JZpr.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+
     <title>About</title>
 </head>
-<body>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a href="index.html" class="nav-link active">Home</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="data.html" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="csvs.html">CSVs</a>
-                <a class="dropdown-item" href="python.html">Python</a>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a href="contact.html" class="nav-link">Contact</a>
-        </li>
-        <li class="nav-item">
-            <a href="about.html" class="nav-link disabled">About</a>
-        </li>
-    </ul>
+<body onload="mapLoad()">
+    <input id="page-nav-toggle" class="main-navigation-toggle" type="checkbox" />
+    <label for="page-nav-toggle">
+      <svg class="icon--menu-toggle" viewBox="0 0 60 30">
+        <g class="icon-group">
+          <g class="icon--menu">
+            <path d="M 6 0 L 54 0" />
+            <path d="M 6 15 L 54 15" />
+            <path d="M 6 30 L 54 30" />
+          </g>
+          <g class="icon--close">
+            <path d="M 15 0 L 45 30" />
+            <path d="M 15 30 L 45 0" />
+          </g>
+        </g>
+      </svg>
+    </label>
+    <nav class="main-navigation">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link active">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="data.html" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="csvs.html">CSVs</a>
+                    <a class="dropdown-item" href="python.html">Python</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link  disabled">About</a>
+            </li>
+        </ul>
+    </nav>
     <h1>About me</h1>
     <p>I'm a uchicago graduate student in Digital Study Program.</p>
     <p>I like playing basketball. I'm a crazy Lakers fan.</p>
-    <p>If you have anything want to share with me, don't be shy! Just contact me!
-    <div>
-        <img class="img-fluid center-img" src="Uchi_logo.png" style="width: 10%; margin: 0 0 0 20px; float: left;">
+    <p>If you have anything want to share with me, don't be shy! Just contact me!</p>
+    <p>Or you could just come and play with me. My location have been shown below.</p>
+    
+    <div class="map-container">
+        <div id = "map"></div>
     </div>
+    <script src="map.js"></script>
+
+    <br>
+    <p>You also could search anything you interested here.</p>
+    <div id="nav-placeholder"></div>
+    <div class = "container mt-3">
+        <form>
+            <div class = "row">
+                <div class = "col">
+                    <input id = "searchTerm" type="text" class = "form control" placeholder = "Enter your search term">
+                </div>
+            </div>
+        </form>
+        <button type = "submit" class="btn btn-primary my-3" onclick="wikiAPI()">Search</button>
+        <div class = "container" id = "wiki"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <script src="wiki.js"></script>
+    <footer class="bg-dark text-white d-none d-md-block">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <a>Welcome!</a>
+            </div>
+            <div class="col-md-6">
+              <a>This is Jiaxuan Zeng's website</a>
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
