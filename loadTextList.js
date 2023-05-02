@@ -1,9 +1,11 @@
-var parentElement = document.getElementById('ochreTableBody')
+var parentElement = document.getElementById('ochreTableBody');
+
+
 var url = "https://ochre.lib.uchicago.edu/ochre?uuid=accd571b-bae3-4d42-93d9-58b65ec79300";
 
 function loadXML(){
     XMLrequest(url);
-    console.log('loadXML -- ok')
+    console.log('loadXML -- ok');
 }
 
 function XMLrequest(link){
@@ -22,6 +24,16 @@ function listTexts(sourceXML){
     document.getElementById('projectTitle').innerText = sourceXML.getElementsByTagName('metadata')[0].children[1].innerHTML;
     document.getElementById('setTitle').innerText = sourceXML.getElementsByTagName('set')[0].children[3].innerHTML;
     document.getElementById('setDescription').innerText = sourceXML.getElementsByTagName('set')[0].children[4].innerHTML;
+    var licenseText = document.getElementById('license');
+    licenseText.innerText = sourceXML.getElementsByTagName('availability')[0].children[0].innerHTML;
+    licenseText.setAttribute('href', sourceXML.getElementsByTagName('availability')[0].children[0].attributes[0].nodevalue);
+
+    
+    
+    
+    
+    
+    
     console.log(sourceXML);
     var textList = sourceXML.getElementsByTagName('text');
     console.log(textList);

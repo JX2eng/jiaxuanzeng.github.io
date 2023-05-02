@@ -13,7 +13,7 @@
 
     <title>About</title>
 </head>
-<body onload="mapLoad();loadXML()">
+<body onload="mapLoad();loadXML();">
     <nav >
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -65,6 +65,7 @@
     <br>
     <br>
     <div class="container">
+        <h3 id = "projectTitle"></h3>
         <h4 id = "setTitle"></h4>
         <table class="table table-striped order-table" id = "ochreTable">
             <thead class="thead-dark" id = "ochreTableColumns">
@@ -72,9 +73,9 @@
                     <th style="text-align: left; width: 30%;">Name</th>
                     <th style="text-align: left; width: 30%;">Description</th>
                 </tr>
-            </thead>
+            </thead>    
+            <tbody id = "ochreTableBody"></tbody>
         </table>
-        <tbody id = "ochreTableBody"></tbody>
     </div>
     <a id="license"></a>
     <script src="loadTextList.js"></script>
