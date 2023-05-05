@@ -35,7 +35,7 @@ function listTexts(sourceXML){
     for(i=0;i < textList.length; i++){
         var tr = document.createElement('tr');
         tr.setAttribute('class','ochreTableRows');
-        tr.setAttribute('id','row'+i);
+        tr.setAttribute('id','row_'+i);
         document.getElementById('ochreTableBody').appendChild(tr);
         var td = document.createElement('td');
         td.setAttribute('id','td_name_'+i);
